@@ -1,10 +1,12 @@
 # Canals: pure URL routing
 
 Things Canals does:
+
     - Maps URL fragments to params and arbitrary JS objects
     - Parses query params
 
 Things Canals doesn't do:
+
     - Listen for URL changes
     - Construct URLs
     - Know anything about pushState
