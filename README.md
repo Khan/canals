@@ -2,14 +2,14 @@
 
 Things Canals does:
 
-    - Maps URL fragments to params and arbitrary JS objects
-    - Parses query params
+- Maps URL fragments to params and arbitrary JS objects
+- Parses query params
 
 Things Canals doesn't do:
 
-    - Listen for URL changes
-    - Construct URLs
-    - Know anything about pushState
+- Listen for URL changes
+- Construct URLs
+- Know anything about pushState
 
 The limited scope of its responsibilities make it useful on the server and 
 client! It also makes it really nice to write tests against, because it's all 
