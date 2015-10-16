@@ -1,4 +1,4 @@
-# Canals: URL-source agnostic routing
+# Canals: pure URL routing
 
 Things Canals does:
     - Maps URL fragments to params and arbitrary JS objects
@@ -58,7 +58,7 @@ Usage:
     route("edit/preview");
     // {args: ["preview"], query: {}, value: function(tab) { ... }}
 
-    route("upload");
+    route("upload");  // No route defined for "upload"
     // null
 
 The syntax for specifying routes was ripped directly from Backbone.Router.
