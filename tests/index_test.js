@@ -11,8 +11,9 @@ describe('Canals', () => {
             "posts/:postId/comments/:commentId": 2,
             "download/*path": 3,
             "edit(/:tab)": 4,
-            "about": 5,
-            "": 6
+            "about/": 5,
+            "about/*things": 6,
+            "": 7
         });
     });
 
@@ -25,15 +26,15 @@ describe('Canals', () => {
     };
 
     it("routes the empty path", () => {
-        assertRoute("", {value: 6});
+        assertRoute("", {value: 7});
     });
 
     it("routes simple paths", () => {
-        assertRoute("about", {value: 5});
+        assertRoute("about/", {value: 5});
     });
 
     it("routes simple paths with query params", () => {
-        assertRoute("about?lang=fr&v=2", {value: 5, query: {lang: "fr",
+        assertRoute("about/?lang=fr&v=2", {value: 5, query: {lang: "fr",
                                                             v: "2"}});
     });
 
@@ -50,6 +51,10 @@ describe('Canals', () => {
                     {args: ["foo/bar/baz"],
                      query: {"lang": "fr"},
                      value: 3});
+    });
+
+    it("routes paths with empty splats", () => {
+        assertRoute("download/", {args: [null], value: 3});
     });
 
     it("routes paths with optional params missing", () => {
